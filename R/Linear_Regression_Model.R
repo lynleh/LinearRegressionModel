@@ -120,3 +120,23 @@ linear_regression_model = function(x, y, na.rm = TRUE, plot = FALSE) {
   # Step 16: Return the result
   return(result)
 }
+#' @export
+summary.Linear_Regression_Model <- function(object, ...) {
+  cat("Call:\n")
+  print(object$call)
+
+  cat("\nCoefficients:\n")
+  print(object$coefficients)
+
+  cat("\nResidual standard error:", round(object$sigma, 4), "\n")
+  cat("R-squared:", round(object$R_squared, 4), "\n")
+  cat("Number of observations:", object$n, "\n")
+}
+
+#' @export
+print.Linear_Regression_Model <- function(x, ...) {
+  cat("Linear Regression Model\n")
+  cat("Coefficients:\n")
+  print(x$coefficients)
+  cat("R-squared:", round(x$R_squared, 4), "\n")
+}
