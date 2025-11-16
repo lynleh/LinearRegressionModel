@@ -8,6 +8,10 @@ editor_options:
 
 <!-- badges: start -->
 
+```         
+[![R-CMD-check](https://github.com/username/MyPackage/actions/workflows/R-CMD-check.
+```
+
 <!-- badges: end -->
 
 The goal of LinearRegressionModel is to provide a step-by-step, beginner
