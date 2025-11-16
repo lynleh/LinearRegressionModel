@@ -30,3 +30,5 @@ VignetteBuilder: knitr
 Config/testthat/edition: 3
 LinkingTo: 
     Rcpp
+URL: https://github.com/lynleh/LinearRegressionModel
+BugReports: https://github.com/lynleh/LinearRegressionModel/issues
