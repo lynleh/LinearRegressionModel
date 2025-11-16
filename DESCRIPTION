@@ -1,11 +1,32 @@
 Package: LinearRegressionModel
-Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Basic Linear Regression Model Tools
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Lynle", 
+           family = "Hayes", 
+           email = "lynleh@umich.edu", 
+           role = c("aut", "cre"))
+Description: A basic, easy to use, beginners guide to an implementation of
+    linear regression with comparisons to base R lm().
+License: MIT + file LICENSE
 Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Maintainer: Lynle Hayes <lynelh@umich.edu>
+Imports: 
+    bench,
+    graphics,
+    Rcpp,
+    stats,
+    utils
+Depends: 
+    R (>= 3.5)
 LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+LinkingTo: 
+    Rcpp

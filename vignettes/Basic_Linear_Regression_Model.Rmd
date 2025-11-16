@@ -1,0 +1,68 @@
+---
+title: "Basic_Linear_Regression_Model"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basic_Linear_Regression_Model}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(LinearRegressionModel)
+library(bench)
+library(stats)
+```
+##Basic Use
+Visual statistical out put of the developed function to ensure code is properly running. 
+The results are numerically equal within tolerance, confirming correctness.
+```{r}
+#Basic use of the developed function
+
+data("data_linear_regression")
+fit = linear_regression_model(data_linear_regression$x, data_linear_regression$y)
+fit$coefficients
+fit$R_squared
+
+```
+## Correctness Demonstration
+We compare the coefficients and fitted values from our custom function against base R `lm()`. 
+The results are numerically equal within tolerance, confirming correctness.
+```{r}
+#Correctness Check
+# Check the correctness of the developed function against base R lm() function
+
+lm_fit = lm(y ~ x, data = data_linear_regression)
+
+# Compare coefficients numerically (allowing small numeric differences)
+all.equal(unname(coef(lm_fit)), unname(fit$coefficients))
+
+# Compare fitted values
+all.equal(unname(fitted(lm_fit)), unname(fit$fitted))
+
+#TRUE means functions match (within the small numerical differnces)
+
+```
+## Efficiency Demonstration
+We benchmark our function against `lm()` using 100 iterations. 
+The results show relative performance in terms of speed and memory usage.
+```{r}
+#Efficiency Check
+# Checks the overall efficiency or computation time of the developed function against base R lm() function (bench mark)
+
+bench::mark(
+  linear_regression_model(data_linear_regression$x, data_linear_regression$y),
+  lm(y ~ x, data = data_linear_regression),
+  iterations = 100,
+  check = FALSE # disables result equality check
+)
+
+```
+
+
