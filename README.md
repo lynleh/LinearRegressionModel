@@ -9,7 +9,7 @@ editor_options:
 <!-- badges: start -->
 
 ```         
-[![R-CMD-check](https://github.com/username/MyPackage/actions/workflows/R-CMD-check.
+[![R-CMD-check](https://github.com/lynleh/LinearRegressionModel/actions/workflows/R-CMD-check.
 ```
 
 <!-- badges: end -->
