@@ -7,10 +7,8 @@ editor_options:
 # LinearRegressionModel
 
 <!-- badges: start -->
-
-```         
-[![R-CMD-check](https://github.com/lynleh/LinearRegressionModel/actions/workflows/R-CMD-check.
-```
+        
+[![R-CMD-check](https://github.com/lynleh/LinearRegressionModel/actions/workflows/R-CMD-check
 
 <!-- badges: end -->
 
